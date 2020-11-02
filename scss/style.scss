@@ -1,0 +1,117 @@
+@import "_null_style";
+
+body {
+  display: flex;
+  justify-content: center;
+  background-color: grey;
+}
+
+.container {
+  margin: 2% 2%;
+  padding: 2% 2%;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  -moz-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  -webkit-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  -o-box-shadow: 0 0 30px rgba(0, 0, 0, 0.6);
+  & > * {
+    margin: 0 0 2% 0;
+    border: medium solid yellowgreen;
+    background-color: yellow;
+    &:last-child {
+      margin: 0 0 0 0;
+    }
+  }
+}
+
+.header {
+  .header__row {
+    & > * {
+      margin: 0.5%;
+    }
+    margin: 1%;
+    border: thin solid yellowgreen;
+    border-radius: 20px;
+    display: flex;
+
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+
+    &-icon {
+      width: 120px;
+      height: 120px;
+      border: thin solid red;
+      border-radius: 50%;
+      background-color: #fff;
+      background-image: url(../img/content/_5.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 80%;
+    }
+    &-menu {
+      display: flex;
+      flex: 1 1 auto;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      font-size: 40px;
+      text-transform: capitalize;
+
+      & li {
+        flex: 0 1 auto;
+        border: thin solid red;
+        background-color: #fff;
+        border-radius: 10px;
+        margin: 1% 1%;
+        padding: 0.5%;
+        text-align: center;
+        &:hover {
+          background-color: rgb(146, 146, 146);
+        }
+      }
+    }
+  }
+}
+
+.content {
+  & > * {
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    border: thin solid yellowgreen;
+    border-radius: 20px;
+
+    & p {
+      border: thin solid rgb(228, 68, 68);
+      font-size: 30px;
+      background-color: #fff;
+      padding: 1%;
+      border-radius: 20px;
+      margin: 0.5%;
+    }
+  }
+
+  .three__column {
+    flex-direction: column;
+  }
+}
+
+.footer {
+  & > * {
+    margin: 1%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: yellow;
+    border: thin solid yellowgreen;
+    border-radius: 20px;
+    & p {
+      border: thin solid rgb(228, 68, 68);
+      font-size: 30px;
+      background-color: #fff;
+      padding: 1%;
+      border-radius: 20px;
+      margin: 0.5%;
+    }
+  }
+}

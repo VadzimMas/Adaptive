@@ -1,0 +1,149 @@
+@import "_null_style";
+
+$maxWidth: 1200;
+
+@mixin adaptiv-font($moketSize, $mobSize) {
+  $addSize: $moketSize - $mobSize;
+  $maxWidth: $maxWidth - 320;
+  font-size: calc(#{$mobSize + px} + #{$addSize} * ((100vw - 320px) / #{$maxWidth}));
+}
+.wrapper {
+  display: flex;
+  min-height: 100%;
+  overflow: hidden;
+  flex-direction: column;
+}
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+@media (max-width: 967px) {
+  .header__row {
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 767px) {
+  .container {
+    max-width: none;
+  }
+
+  .header__row-menu {
+    flex-direction: column;
+    flex: 1 1 auto;
+  }
+
+  .three__column-row {
+    flex-wrap: wrap;
+  }
+  .two__column-row {
+    flex-wrap: wrap;
+  }
+}
+
+.header {
+  background-color: grey;
+  .header__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1%;
+    .header__row-icon {
+      background-color: yellow;
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      margin: 10px;
+      & img {
+        display: none;
+        max-width: 100%;
+      }
+    }
+    .header__row-menu {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      & li {
+        width: 130px;
+        height: 30px;
+        background-color: yellow;
+        margin: 10px;
+      }
+    }
+  }
+}
+
+.content__body {
+  flex: 1 1 auto;
+  .three__column-body {
+    .three__column-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .three__column-img {
+      background-color: yellow;
+      background-size: 100%;
+      margin-bottom: 4%;
+      padding: 20%;
+      & img {
+        max-width: 100%;
+      }
+    }
+
+    .three__column-text {
+      color: white;
+      @include adaptiv-font(20, 14);
+    }
+
+    .three__column {
+      flex: 0 1 auto;
+      background-color: grey;
+      padding: 1%;
+      margin: 1%;
+    }
+  }
+
+  .two__column-body {
+    .two__column-row {
+      display: flex;
+      justify-content: center;
+    }
+
+    .two__column-img {
+      background-color: yellow;
+      background-size: 100%;
+      margin-bottom: 4%;
+      padding: 20%;
+    }
+
+    .two__column-text {
+      color: white;
+      @include adaptiv-font(20, 14);
+    }
+
+    .two__column {
+      flex: 0 1 auto;
+      background-color: grey;
+      padding: 1%;
+      margin: 1%;
+    }
+  }
+}
+
+.footer {
+  background-color: grey;
+  .footer__row {
+    &-btm {
+      display: flex;
+      justify-content: space-around;
+      flex: 1 1 auto;
+      & li {
+        background-color: yellow;
+        padding: 2% 9%;
+        margin: 2%;
+      }
+    }
+  }
+}
